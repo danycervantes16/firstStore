@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    p:nth-child(2n) {
+        color: blueviolet;
+    }
+    p:nth-child(2n+1) {
+        color: blue;
+    }
+    p:nth-child(2n)::first-letter {
+        color: red;
+        font-size: 40px;
+    }
+    p:nth-child(2n+1)::first-letter {
+        color: lightblue;
+        font-size: 60px;
+    }
+</style>
+<body>
+    <p>Perro</p>
+    <p>Gato</p>
+    <p>Vaca</p>
+    <p>Leon</p>
+</body>
+</html>

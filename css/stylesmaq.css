@@ -1,0 +1,168 @@
+body {
+    margin: 0px;
+    background-color:#eeeeee;
+    font-family: 'Roboto', sans-serif;
+}
+.header{
+    width: 100%;
+    height: 150px;
+    background-image: linear-gradient(#1089ff,#eeeeee);
+    display: flex;
+    justify-content: space-between;
+}
+.header__imagen {
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 130px;
+    height: 110px;
+}
+.icon_profile {
+    width: 40px;
+    height: 40px;
+}
+.header__menu{
+    margin-right: 10px;
+    padding: 0px;
+}
+.header__menu ul {
+    display: none;
+    list-style: none;
+    padding: 0px;
+    position: absolute;
+    text-align: right;
+    margin: 0px 10px 0px 0px;
+}
+.header__menu:hover ul, ul:hover{
+    display: block;
+}
+.header__menu li {
+    margin: 0px 0px;
+}
+.header__menu li a {
+    color: black;
+    text-decoration: none;
+}
+.header__menu li a:hover {
+    text-decoration: underline;
+}
+.header__menu--profile{
+    width: 100px;
+    height: 50px;
+    display: flex;
+    margin: 8px 10px 0px 8px;
+    color: black;
+}
+.main {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main__title {
+    color: #1089ff;
+    font-size: 25px;
+}
+.input {
+    background-color: #eeeeee;
+    border-radius: 25px;
+    border: 3px solid #1089ff;
+    color: #1089ff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    height: 50px;
+    padding: 0px 20px;
+    width: 70%;
+    outline: none;
+}
+.categories {
+    font-size: 16px;
+    color:#1089ff;
+    padding-left: 20px;
+}
+::placeholder {
+    color: #1089ff;
+}
+.carrusel {
+    width: 100%;
+    overflow: auto; /* desbordamiento de la seccion scroll: barras de desp, auto: barra ver,hidden: oculto */
+    padding: 0px 30px;
+    position: relative; /* a partir de bloque, absolute: a partir del margen, sticky: pagajoso*/
+}
+.carrusel__container {
+    white-space: nowrap;
+    margin: 0px;
+    padding-bottom: 10px; /* Espacio abajo, right, left top */
+}
+.carrusel-item{
+    background-color: none;
+    width: 200px;
+    height: 250px;
+    overflow: hidden;
+    display: inline-block;
+    margin-right: 20px;
+    cursor: auto;
+    transition: 450ms all;
+    transform-origin: center left;
+    border-radius: 10px;
+}
+.carrusel-item:hover ~ .carrusel-item {
+    transform: translate3d(100px,0,0); /* Hace que se recorra la imagen para mostrar la principal */
+}
+.carrusel__container:hover .carrusel-item{
+    opacity: 0.3; /*el elemento secundario tiene esta opacidad*/
+}
+.carrusel__container:hover .carrusel-item:hover{
+    transform: scale(1.2); /* define el tamaño del bloque que crecera */
+    opacity: 1;
+    border-radius: 10px;
+}
+.carrusel-item__img{
+    width: 200px;
+    height: 250px;
+    object-fit: cover; /* es como faja y se ajuste la imagen */
+}
+.carrusel-item__details{
+    /* background: linear-gradient(white); */
+    font-size: 12px;
+    color:black;
+    opacity: 0;
+    transition: 450 ms opacity;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right:0;
+    bottom: 0px;
+    font-family: 'Pangolin', cursive;
+    display: flex;
+    align-items: center;
+}
+.carrusel-item:hover .carrusel-item__details{
+    opacity: 1.0;
+    margin-top: 180px;
+}
+.carrusel-item__details img{
+    width: 30px;
+    padding: 2px;
+}
+.carrusel-item:hover .carrusel-item__icon:hover {
+    transform: scale(2);
+}
+.carrusel-item__details--title, .carrusel-item__details--subtitle{
+    color: white;
+    margin: 0px 5px 2px 0px;
+
+}
+.footer a {
+    text-decoration: none;
+    font-size: 16px;
+    color:black;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+.footer:hover a:hover {
+    text-decoration: underline;
+    color:#1089ff;
+    font-size: 20px;
+}

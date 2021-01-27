@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrusel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Passion+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+</head>
+<style>
+    body {
+        margin: 0px;
+    }
+    .carrusel {
+        width: 100%;
+        overflow: auto; /* desbordamiento de la seccion scroll: barras de desp, auto: barra ver,hidden: oculto */
+        padding: 30px;
+        position: relative; /* a partir de bloque, absolute: a partir del margen, sticky: pagajoso*/
+    }
+    .carrusel__container {
+        white-space: nowrap;
+        margin: 70px 0px;
+        padding-bottom: 10px; /* Espacio abajo, right, left top */
+    }
+    .carrusel-item{
+        background-color: none;
+        width: 200px;
+        height: 250px;
+        border-radius: 20px;
+        overflow: hidden;
+        display: inline-block;
+        margin-right: 10px;
+        cursor: auto;
+        transition: 450ms all;
+        transform-origin: center left;
+    }
+    .carrusel-item:hover ~ .carrusel-item {
+        transform: translate3d(100px,0,0); /* Hace que se recorra la imagen para mostrar la principal */
+    }
+    .carrusel__container:hover .carrusel-item{
+        opacity: 0.3; /*el elemento secundario tiene esta opacidad*/
+    }
+    .carrusel__container:hover .carrusel-item:hover{
+        transform: scale(1.2); /* define el tamaño del bloque que crecera */
+        opacity: 1;
+    }
+    .carrusel-item__img{
+        width: 200px;
+        height: 250px;
+        object-fit: cover; /* es como faja y se ajuste la imagen */
+    }
+    .carrusel-item__details{
+        /* background: linear-gradient(white); */
+        font-size: 12px;
+        color:black;
+        opacity: 0;
+        transition: 450 ms opacity;
+        padding: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right:0;
+        bottom: 0px;
+        font-family: 'Pangolin', cursive;
+        display: flex;
+        justify-content: center;
+    }
+    .carrusel-item:hover .carrusel-item__details{
+        opacity: 1.0;
+        margin-top: 180px;
+    }
+    .carrusel-item__details img{
+        width: 20px;
+        padding: 2px;
+    }
+    .carrusel-item:hover .carrusel-item__icon:hover {
+        transform: scale(2);
+    }
+    .carrusel-item__details--title, .carrusel-item__details--subtitle{
+        color: white;
+        margin: 0px 0px 2px 0px;
+    }
+</style>
+<body>
+    <section class="carrusel">
+        <div class="carrusel__container">
+            <div class="carrusel-item">
+                <img class="carrusel-item__img" src="./beer.jpg" alt="beer">
+                <div class="carrusel-item__details">
+                    <div>
+                        <img class="carrusel-item__icon" src="https://img.icons8.com/material/24/000000/champagne.png" alt="brindis1">
+                        <img class="carrusel-item__icon" src="https://img.icons8.com/material/24/000000/music--v1.png" alt="music1">
+                    </div>
+                    <p class="carrusel-item__details--title">Cerveza</p>
+                    <p class="carrusel-item__details--subtitle">Mamalona</p>
+                </div>
+            </div>
+            <div class="carrusel-item">
+                <img class="carrusel-item__img" src="./Mezcal.jpg" alt="mezcalito">
+                <div class="carrusel-item__details">
+                    <div>
+                        <img class="carrusel-item__icon" src="https://img.icons8.com/cotton/24/000000/champagne--v1.png" alt="brindis2">
+                        <img class="carrusel-item__icon" src="https://img.icons8.com/ios-filled/50/000000/music.png" alt="music2">
+                    </div>
+                    <p class="carrusel-item__details--title">Mezcalito</p>
+                    <p class="carrusel-item__details--subtitle">Poderoso</p>
+                </div>
+            </div>
+            <div class="carrusel-item">
+                <img class="carrusel-item__img" src="./Tequila.jpg" alt="tequila">
+                <div class="carrusel-item__details">
+                    <div>
+                        <img class="carrusel-item__icon" src="https://img.icons8.com/ios/64/000000/champagne.png" alt="brindis2">
+                        <img class="carrusel-item__icon" src="https://img.icons8.com/cotton/64/000000/music.png" alt="music2">
+                    </div>
+                    <p class="carrusel-item__details--title">Tequila</p>
+                    <p class="carrusel-item__details--subtitle">Pa' los dioses</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

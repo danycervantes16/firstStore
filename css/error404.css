@@ -1,0 +1,80 @@
+body {
+    margin: 0px;
+    background-color:#eeeeee;
+    font-family: 'Roboto', sans-serif;
+}
+.header{
+    width: 100%;
+    height: 150px;
+    background-image: linear-gradient(#1089ff,#eeeeee);
+    display: flex;
+    justify-content: space-between;
+}
+.header__imagen {
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    width: 150px;
+    height: 105px;
+}
+.box_error {
+    width: 100%;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.error_img {
+    width: 250px;
+    height: 200px;
+    border-radius: 25px;
+    margin-top: 20px;
+}
+.text_error {
+    color: #1089ff;
+    width: 300px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    margin: 10px;
+    animation-name: caida;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+@keyframes caida {
+    0% {transform: scale(1);}
+    30% {transform: scaleX(1.25) scaleY(0.75);}
+    40% {transform: scaleX(0.75) scaleY(1.25);}
+    60% {transform: scaleX(1.15) scaleY(0.85);}
+    100% {transform: scale(1);}
+}
+.enlace_inicio {
+    text-decoration: none;
+    font-size: 20px;
+    color:#1089ff;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-weight: 700;
+}
+.enlace_inicio:hover {
+    text-decoration: underline;
+}
+.footer a {
+    text-decoration: none;
+    font-size: 13px;
+    color:black;
+    padding-right: 10px;
+    padding-bottom: 15px;
+}
+.footer:hover a:hover {
+    text-decoration: underline;
+    color:#1089ff;
+    font-size: 15px;
+}
+
+
